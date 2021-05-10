@@ -11,6 +11,9 @@
             "name":{
                "type":"string"
             },
+            "user":{
+               "type":"string"
+            }, 
             "rating":{
                "type":"integer"
             },
@@ -29,6 +32,7 @@
          "required":[
             "_id",
             "name",
+            "user",
             "rating",
             "comment",
             "createdAt"
