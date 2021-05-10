@@ -1,0 +1,44 @@
+{
+   "title":"User Profile",
+   "description":"An user profile",
+   "type":"object",
+   "properties":{
+      "_id":{
+         "type":"string"
+      },
+      "name":{
+         "type":"string"
+      },
+      "email":{
+         "type":"string",
+         "format":"email"
+      },
+      "isAdmin":{
+         "type":"boolean"
+      },
+      "token":{
+         "type":"string"
+      },
+      "createdAt":{
+         "type":"string",
+         "format":"date"
+      },
+      "updatedAt":{
+         "type":"string",
+         "format":"date"
+      },
+      "__v":{
+         "type":"number"
+      },
+      "password":{
+         "type":"string"
+      }
+   },
+   "required":[
+      "_id",
+      "name",
+      "email",
+      "isAdmin"
+   ],
+   "additionalProperties":false
+}

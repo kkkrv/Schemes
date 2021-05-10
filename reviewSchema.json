@@ -1,0 +1,35 @@
+{
+   "title":"Review",
+   "description":"A product product review",
+   "type":"object",
+   "properties":{
+      "_id":{
+         "type":"string"
+      },
+      "name":{
+         "type":"string"
+      },
+      "raiting":{
+         "type":"integer"
+      },
+      "comment":{
+         "type":"string"
+      },
+      "createdAt":{
+         "type":"string",
+         "format":"date-time"
+      },
+      "updatedAt":{
+         "type":"string",
+         "format":"date-time"
+      }
+   },
+   "required":[
+      "_id",
+      "name",
+      "raiting",
+      "comment",
+      "createdAt"
+   ],
+   "additionalProperties":false
+}
