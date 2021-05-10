@@ -1,0 +1,144 @@
+{
+   "$schema": "https://json-schema.org/draft/2020-12/schema",
+   "title": "Order",
+   "description": "An order with selected products",
+   "definitions":{
+      "address":{
+         "type":"object",
+         "properties":{
+            "address":{
+               "type":"string"
+            },
+            "city":{
+               "type":"string"
+            },
+            "postalCode":{
+               "type":"string"
+            },
+            "country":{
+               "type":"string"
+            }
+         },
+         "required":[
+            "address",
+            "city",
+            "country",
+            "postalCode"
+         ],
+         "additionalProperties": false
+      },
+      "orderItem":{
+         "type":"object",
+         "properties":{
+            "_id":{
+               "type":"string"
+            },
+            "product":{
+               "type":"string"
+            },
+            "price":{
+               "type":"number"
+            },
+            "name":{
+               "type":"string"
+            },
+            "image":{
+               "type":"string"
+            },
+            "qty":{
+               "type":"integer"
+            }
+         },
+         "required":[
+            "_id",
+            "product",
+            "price",
+            "name",
+            "qty"
+         ],
+         "additionalProperties": false
+      }
+   },
+   "type":"object",
+   "properties":{
+      "_id":{
+         "type":"string"
+      },
+      "taxPrice":{
+         "type":"number"
+      },
+      "totalPrice":{
+         "type":"number"
+      },
+      "shippingPrice":{
+         "type":"number"
+      },
+      "isPaid":{
+         "type":"boolean"
+      },
+      "paidAt":{
+         "type":"string",
+         "format":"date-time"
+      },
+      "paymentResult":{
+      	 "type": "object",
+      	 "properties": {
+            "email_address":{
+               "type":"string"
+            },
+            "id":{
+               "type":"string"
+            },
+            "update_time":{
+               "type":"string"
+            },
+            "status":{
+               "enum": ["COMPLETED", ""]
+            }
+         },
+         "required":[
+            "email_address",
+            "status"
+         ],
+         "additionalProperties": false
+      },
+      "isDelivered":{
+         "type":"boolean"
+      },
+      "user":{
+         "type":"string"
+      },
+      "shippingAddress":{
+         "$ref":"#/definitions/address"
+      },
+      "orderItems":{
+         "type":"array",
+         "items": {
+            "$ref":"#/definitions/orderItem"
+         }
+      },
+      "paymentMethod":{
+         "enum":[
+            "PayPal",
+            "Debit Card"
+         ]
+      },
+      "_v":{
+         "type":"integer"
+      },
+      "createdAt":{
+         "type":"string",
+         "format":"date-time"
+      },
+      "updatedAt":{
+         "type":"string",
+         "format":"date-time"
+      },
+      "deliveredAt":{
+         "type":"string",
+         "format":"date-time"
+      }
+   },
+   "required": [ "_id", "shippingAddress", "totalPrice", "taxPrice", "shippingPrice", "isPaid", "isDelivered", "orderItems", "user", "paymentMethod", "createdAt" ],
+   "additionalProperties": false
+}
