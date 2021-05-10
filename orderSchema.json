@@ -90,14 +90,8 @@
             "email_address":{
                "type":"string"
             },
-            "id":{
-               "type":"string"
-            },
-            "update_time":{
-               "type":"string"
-            },
             "status":{
-               "enum": ["COMPLETED", ""]
+               "enum": ["COMPLETED", "PENDING"]
             }
          },
          "required":[
