@@ -97,8 +97,7 @@
          "required":[
             "email_address",
             "status"
-         ],
-         "additionalProperties": false
+         ]
       },
       "isDelivered":{
          "type":"boolean"
