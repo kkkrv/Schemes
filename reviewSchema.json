@@ -9,7 +9,7 @@
       "name":{
          "type":"string"
       },
-      "raiting":{
+      "rating":{
          "type":"integer"
       },
       "comment":{
@@ -27,7 +27,7 @@
    "required":[
       "_id",
       "name",
-      "raiting",
+      "rating",
       "comment",
       "createdAt"
    ],
